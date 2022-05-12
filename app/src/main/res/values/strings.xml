@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PS2017050RestAPIAssignment</string>
+
+    <string name="fragment_posts_list_name">Posts</string>
+    <string name="fragment_post_details_name">Post Details</string>
+    <string name="fragment_comments_list_name">Comments of post {postId}</string>
+</resources>
