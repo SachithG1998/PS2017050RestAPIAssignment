@@ -6,14 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import lk.ac.kln.stu.ps2017050restapi.data.Datasource
+import lk.ac.kln.stu.ps2017050restapi.model.Post
 import lk.ac.kln.stu.ps2017050restapiassignment.PostsListFragmentDirections
 import lk.ac.kln.stu.ps2017050restapiassignment.R
 
-class PostAdapter
-    : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
-
-    private val posts = Datasource().loadPosts()
+class PostAdapter(
+    private val posts: List<Post>
+) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     class PostViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val textviewPostId: TextView = view.findViewById(R.id.textview_post_id)
@@ -36,7 +35,9 @@ class PostAdapter
 
         holder.view.setOnClickListener {
             val action = PostsListFragmentDirections
-                .actionPostsListFragmentToPostDetailsFragment(postId = holder.textviewPostId.text.toString().toInt())
+                .actionPostsListFragmentToPostDetailsFragment(
+                    postId = holder.textviewPostId.text.toString().toInt()
+                )
 
             it.findNavController().navigate(action)
         }

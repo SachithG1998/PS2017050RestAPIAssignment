@@ -4,4 +4,5 @@
     <string name="fragment_posts_list_name">Posts</string>
     <string name="fragment_post_details_name">Post Details</string>
     <string name="fragment_comments_list_name">Comments of post {postId}</string>
+    <string name="fragment_post_details_comments">Comments</string>
 </resources>
